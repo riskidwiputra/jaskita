@@ -1,0 +1,1 @@
+<x-app-layout><x-slot name="header"><h1 class="font-display text-2xl">Buku Kas</h1><p class="text-sm text-muted mt-1">Uang masuk (sewa + denda) dan uang keluar (pengeluaran non-modal), digabung dalam satu catatan</p></x-slot>{!! app('livewire')->mount('buku-kas') !!}</x-app-layout>

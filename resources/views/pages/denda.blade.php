@@ -1,0 +1,1 @@
+<x-app-layout><x-slot name="header"><h1 class="font-display text-2xl">Denda</h1><p class="text-sm text-muted mt-1">Catatan denda manual, terhubung ke transaksi</p></x-slot>{!! app('livewire')->mount('denda-manager') !!}</x-app-layout>

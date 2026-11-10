@@ -1,0 +1,28 @@
+<?php
+
+use Illuminate\Database\Migrations\Migration;
+use Illuminate\Database\Schema\Blueprint;
+use Illuminate\Support\Facades\Schema;
+
+return new class extends Migration
+{
+    public function up(): void
+    {
+        Schema::create('reviews', function (Blueprint $table) {
+            $table->id();
+            $table->timestamps(3);
+            $table->softDeletes('deleted_at', 3);
+            $table->unsignedBigInteger('transaksi_sewa_id');
+            $table->string('nama_penyewa', 180);
+            $table->string('item_sewa', 500)->nullable();
+            $table->dateTime('tanggal_sewa', 3)->nullable();
+            $table->dateTime('tanggal_kembali', 3)->nullable();
+            $table->bigInteger('rating');
+            $table->text('kritik_saran');
+            $table->unique('transaksi_sewa_id', 'idx_reviews_transaksi_sewa_id');
+            $table->index('deleted_at', 'idx_reviews_deleted_at');
+        });
+    }
+
+    public function down(): void { Schema::dropIfExists('reviews'); }
+};

@@ -1,0 +1,1 @@
+<x-app-layout><x-slot name="header"><h1 class="font-display text-2xl">Transaksi</h1><p class="text-sm text-muted mt-1">Riwayat sewa jas</p></x-slot>{!! app('livewire')->mount('transaksi-manager') !!}</x-app-layout>

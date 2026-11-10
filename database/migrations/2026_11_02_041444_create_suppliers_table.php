@@ -1,0 +1,23 @@
+<?php
+
+use Illuminate\Database\Migrations\Migration;
+use Illuminate\Database\Schema\Blueprint;
+use Illuminate\Support\Facades\Schema;
+
+return new class extends Migration
+{
+    public function up(): void
+    {
+        Schema::create('suppliers', function (Blueprint $table) {
+            $table->id();
+            $table->timestamps(3);
+            $table->softDeletes('deleted_at', 3);
+            $table->text('nama_supplier')->nullable();
+            $table->text('kontak')->nullable();
+            $table->text('link_toko')->nullable();
+            $table->index('deleted_at', 'idx_suppliers_deleted_at');
+        });
+    }
+
+    public function down(): void { Schema::dropIfExists('suppliers'); }
+};

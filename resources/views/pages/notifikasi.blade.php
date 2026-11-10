@@ -1,0 +1,1 @@
+<x-app-layout><x-slot name="header"><h1 class="font-display text-2xl">Notifikasi</h1><p class="text-sm text-muted mt-1">Transaksi jatuh tempo</p></x-slot>{!! app('livewire')->mount('notifikasi-jatuh-tempo') !!}</x-app-layout>

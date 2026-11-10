@@ -1,0 +1,1 @@
+<x-app-layout><x-slot name="header"><h1 class="font-display text-2xl">Dashboard</h1><p class="text-sm text-muted mt-1">Ringkasan usaha sewa jas Anda</p></x-slot>{!! app('livewire')->mount('dashboard') !!}</x-app-layout>

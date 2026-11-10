@@ -1,0 +1,91 @@
+@import "tailwindcss";
+@import "./landing.css";
+@import "./google-reviews.css";
+
+:root {
+  --background: #F7F5F2;
+  --foreground: #23241F;
+  --surface: #FFFFFF;
+  --border: #E4E0D8;
+  --navy: #1F2A44;
+  --navy-light: #2E3B5C;
+  --gold: #9C6B2E;
+  --gold-light: #C08A45;
+  --muted: #706C63;
+  --danger: #B3432B;
+  --success: #2F6F4E;
+  --warning: #B3812B;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-surface: var(--surface);
+  --color-border: var(--border);
+  --color-navy: var(--navy);
+  --color-navy-light: var(--navy-light);
+  --color-gold: var(--gold);
+  --color-gold-light: var(--gold-light);
+  --color-muted: var(--muted);
+  --color-danger: var(--danger);
+  --color-success: var(--success);
+  --color-warning: var(--warning);
+  --font-sans: Manrope, ui-sans-serif, system-ui, sans-serif;
+  --font-display: Fraunces, Georgia, serif;
+}
+
+body { background: var(--background); color: var(--foreground); }
+input, select, textarea, button { font: inherit; }
+
+.fixed.inset-0.z-50 :is(input:not([type="checkbox"]), select, textarea) {
+  border: 1px solid #d5dbe6;
+  background-color: #fff;
+  box-shadow: 0 1px 2px rgb(31 42 68 / 6%);
+}
+
+.fixed.inset-0.z-50 :is(input:not([type="checkbox"]), select, textarea):focus {
+  border-color: var(--navy);
+  outline: 2px solid rgb(31 42 68 / 12%);
+  outline-offset: 1px;
+}
+
+.pagination-button {
+  display: inline-flex;
+  min-height: 2.25rem;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid var(--border);
+  border-radius: 0.65rem;
+  padding: 0.45rem 0.7rem;
+  background: var(--surface);
+  color: var(--foreground);
+  font-size: 0.75rem;
+  font-weight: 600;
+  text-decoration: none;
+  transition: background-color 150ms ease, color 150ms ease, border-color 150ms ease;
+}
+
+.pagination-button:hover:not(.is-disabled):not(.is-current) {
+  border-color: var(--navy);
+  background: rgb(31 42 68 / 5%);
+}
+
+.pagination-button.is-current {
+  border-color: var(--navy);
+  background: var(--navy);
+  color: #fff;
+}
+
+.pagination-button.is-disabled,
+.pagination-ellipsis {
+  color: var(--muted);
+}
+
+.pagination-button.is-disabled {
+  cursor: not-allowed;
+  opacity: 0.55;
+}
+
+.pagination-ellipsis {
+  padding: 0 0.35rem;
+}

@@ -1,0 +1,1 @@
+<x-app-layout><x-slot name="header"><h1 class="font-display text-2xl">Penyewa</h1><p class="text-sm text-muted mt-1">Data pelanggan yang pernah/sedang menyewa</p></x-slot>{!! app('livewire')->mount('penyewa-manager') !!}</x-app-layout>

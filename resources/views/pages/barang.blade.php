@@ -1,0 +1,1 @@
+<x-app-layout><x-slot name="header"><h1 class="font-display text-2xl">Barang</h1><p class="text-sm text-muted mt-1">Kelola modal & stok jas Anda</p></x-slot>{!! app('livewire')->mount('barang-manager') !!}</x-app-layout>
